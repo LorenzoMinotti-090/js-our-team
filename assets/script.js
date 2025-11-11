@@ -37,4 +37,20 @@ const teamMembers = [
   }
 ];
 
-console.log("ciao mondo")
+
+const container = document.getElementById("team-container");
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const { name, role, email, img } = teamMembers[i];
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+        <img src="${img}" alt="${name}">
+        <h3>${name}</h3>
+        <p>${role}</p>
+        <p>${email}</p>
+      `;
+
+  container.appendChild(card);
+}
